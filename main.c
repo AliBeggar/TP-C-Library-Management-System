@@ -741,33 +741,6 @@ int main() {
                 printf("&");
                 print_colored("   Souhail EL FRAIHI", "\033[34m");
                 printf("\n   1CP G14              1CP G01");
-                printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint: use Konami code :)");
-                int konami_code[] = {UP, UP, DOWN, DOWN, LEFT, RIGHT, LEFT, RIGHT, B_KEY, A_KEY};
-                int konami_length = 10;
-                int input_sequence[10];  // To store user input
-                int index = 0;
-                while (index < konami_length) {
-                    int ch = _getch();  // Read a single key press
-                    if (ch == 13) break;
-                    if (ch == 0 || ch == 224) {
-                        ch = _getch();
-                    }
-                    input_sequence[index] = ch;
-                    index++;
-                    for (int i = 0; i < index; i++) {
-                        if (input_sequence[i] != konami_code[i]) {
-                        index = 0;  // Reset input
-                        break;
-                        }
-                    }
-                    if (index == konami_length) {
-                        char filename[] = ".\\bin\\chocolate-doom-3.1.0-win64\\chocolate-doom.exe";
-                        clear_screen();
-                        print_colored("\nLaunching DOOM...\n", "\033[1;32m");
-                        system(filename);
-                        break;
-                    }
-                }
                 break;
             case 0: // Exit
                 clear_screen();
